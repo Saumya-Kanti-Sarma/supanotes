@@ -48,6 +48,7 @@ export function Sidebar({
   onRenameValueChange,
   onToggleTheme,
 }) {
+
   return (
     <aside className={`sidebar ${isOpen ? "open" : "closed"}`}>
       {/* ── Header ── */}
@@ -78,6 +79,12 @@ export function Sidebar({
             key={note.id}
             className={`file-item ${activeTabId === note.id ? "active" : ""}`}
             onClick={() => onOpenNote(note.id)}
+            tabIndex={0}
+            onKeyDown={(e) => {
+              console.log(e.key);
+              if (e.key === 'F2') onStartRename(note.id, note.name, e);
+              if (e.key === 'Delete') onDeleteNote(note.id, e);
+            }}
           >
             <img src="/note.svg" height={16} />
 
@@ -101,14 +108,14 @@ export function Sidebar({
             <div className="file-actions">
               <button
                 className="icon-btn small"
-                title="Rename"
+                title="Rename (f2)"
                 onClick={(e) => onStartRename(note.id, note.name, e)}
               >
                 <RiPencilLine />
               </button>
               <button
                 className="icon-btn small danger"
-                title="Delete"
+                title="Delete (Del)"
                 onClick={(e) => onDeleteNote(note.id, e)}
               >
                 <RiDeleteBinLine />
