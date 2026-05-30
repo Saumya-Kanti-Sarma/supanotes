@@ -4,7 +4,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { RiAddLine, RiFileLine, RiMenuLine, RiCloseLine } from "react-icons/ri";
-
+import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
 import { useNotes } from "./hooks/useNotes";
 import { useTheme } from "./hooks/useTheme";
 import { useTabs } from "./hooks/useTabs";
@@ -80,7 +80,13 @@ export default function App() {
   // ────────────────────────────────────────────────────────────────────────
 
   return (
-    <div className={`app ${theme}`}>
+    <div className={`app ${theme}`}
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.altKey && e.key.toLocaleLowerCase() === "b") setIsSidebarOpen((prev) => !prev)
+      }
+      }
+    >
       {/* ── Sidebar ── */}
       <Sidebar
         isOpen={isSidebarOpen}
@@ -107,9 +113,9 @@ export default function App() {
           <button
             className="icon-btn menu-btn"
             onClick={() => setIsSidebarOpen((prev) => !prev)}
-            title="Toggle sidebar"
+            title="Toggle sidebar (Alt+b)"
           >
-            {isSidebarOpen ? <RiCloseLine /> : <RiMenuLine />}
+            {isSidebarOpen ? <MdOutlineKeyboardDoubleArrowLeft /> : <RiMenuLine />}
           </button>
 
           <div className="tabs">
