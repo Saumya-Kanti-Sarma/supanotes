@@ -7,9 +7,10 @@ import {
   RiDeleteBinLine,
   RiSunLine,
   RiMoonLine,
-  RiFileLine,
   RiPencilLine,
 } from "react-icons/ri";
+
+import "./Sidebar.css";
 
 /**
  * @param {{
@@ -52,7 +53,7 @@ export function Sidebar({
       {/* ── Header ── */}
       <div className="sidebar-header">
         <div className="sidebar-logo">
-          <img src="/favicon.svg" alt="" />
+          <img src={theme === "dark" ? "/favicon.svg" : "/favicon-white.svg"} alt="" />
           <span className="sidebar-title">supa notes</span>
         </div>
 
@@ -78,7 +79,7 @@ export function Sidebar({
             className={`file-item ${activeTabId === note.id ? "active" : ""}`}
             onClick={() => onOpenNote(note.id)}
           >
-            <RiFileLine className="file-icon" />
+            <img src="/note.svg" height={16} />
 
             {renamingId === note.id ? (
               <input
