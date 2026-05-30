@@ -1,0 +1,36 @@
+/* ─── AI action buttons ──────────────────────────────────────────────────── */
+
+.toolbar-btns {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-top: 1px solid var(--border);
+}
+
+.toolbar-btns button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--bg3);
+  color: var(--text2);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.toolbar-btns button:hover {
+  background: var(--bg4);
+  color: var(--text);
+}
+
+.toolbar-btns button.active {
+  background: rgba(134, 59, 255, 0.12);
+  border-color: var(--accent);
+  color: var(--accent);
+}

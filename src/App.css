@@ -377,6 +377,7 @@ img {
   overflow: hidden;
   backdrop-filter: blur(20px);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  z-index: 100;
 }
 
 .toolbar-group {
