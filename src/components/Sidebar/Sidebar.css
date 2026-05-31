@@ -25,6 +25,7 @@
   border-bottom: 1px solid var(--border);
   gap: 8px;
   flex-shrink: 0;
+  height: var(--navheight);
 }
 
 .sidebar-logo {

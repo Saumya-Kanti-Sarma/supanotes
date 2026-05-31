@@ -7,6 +7,10 @@ body,
   overflow: hidden;
 }
 
+:root {
+  --navheight: 60px;
+}
+
 .app.dark {
   --bg: #0d0d0d;
   --bg2: #111111;

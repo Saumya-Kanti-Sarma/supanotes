@@ -39,7 +39,7 @@
 .topbar {
   display: flex;
   align-items: center;
-  height: 44px;
+  height: var(--navheight);
   background: var(--bg2);
   border-bottom: 1px solid var(--border);
   flex-shrink: 0;
