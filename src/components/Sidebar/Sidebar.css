@@ -6,9 +6,15 @@
   border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
-  transition: transform 0.25s ease, width 0.25s ease;
+  transition: width 0.25s ease, min-width 0.25s ease;
   z-index: 100;
   overflow: hidden;
+}
+
+.sidebar.closed {
+  width: 0;
+  min-width: 0;
+  border-right: none;
 }
 
 .sidebar-header {
