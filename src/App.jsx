@@ -13,6 +13,7 @@ import { Sidebar } from "./components/Sidebar/Sidebar";
 import { NoteEditor } from "./components/NoteEditor/NoteEditor";
 
 import "./App.css";
+import Popup from "./components/Popup/Popup";
 
 export default function App() {
   const { theme, loadTheme, toggleTheme } = useTheme();
@@ -80,7 +81,7 @@ export default function App() {
   // ────────────────────────────────────────────────────────────────────────
 
   return (
-    <div className={`app ${theme}`}
+    <div className="app"
       tabIndex={0}
       onKeyDown={(e) => {
         if (e.altKey && e.key.toLocaleLowerCase() === "b") setIsSidebarOpen((prev) => !prev)
@@ -165,6 +166,9 @@ export default function App() {
             </div>
           )}
         </div>
+        <Popup>
+          <h1>hello</h1>
+        </Popup>
       </div>
 
       {/* Mobile overlay — tap to close sidebar */}
